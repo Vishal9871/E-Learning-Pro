@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Details - E-Learning Platform</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; 
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">E-Learning Pro</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#courses">Courses</a></li>
+                <li><a href="index.html#testimonials">Testimonials</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="course-details">
+            <h2 id="course-title">Course Title</h2>
+            <div class="video-container">
+                <iframe id="course-video" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+            <div class="course-content">
+                <h3>Course Overview</h3>
+                <p id="course-description">Course description will be displayed here.</p>
+                <h3>What You'll Learn</h3>
+                <ul id="course-topics">
+                    <!-- Course topics will be dynamically added here -->
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <p>&copy; 2024 E-Learning Pro. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const courses = {
+            'web-development': {
+                title: 'Web Development',
+                description: 'This comprehensive course covers the fundamentals of web development, including HTML, CSS, and JavaScript. You\'ll learn how to create responsive websites and interactive web applications, as well as modern development practices and popular frameworks.',
+                topics: [
+                    'HTML5 structure and semantics',
+                    'CSS3 styling and layouts',
+                    'JavaScript basics and DOM manipulation',
+                    'Responsive design principles',
+                    'Introduction to React.js',
+                    'Backend basics with Node.js and Express',
+                    'Database integration with MongoDB',
+                    'RESTful API development',
+                    'Version control with Git',
+                    'Deployment and hosting'
+                ],
+                videoId: 'zJSY8tbf_ys'
+            },
+            'graphic-design': {
+                title: 'Graphic Design',
+                description: 'Master the principles of graphic design and learn to use industry-standard tools. This course covers color theory, typography, layout design, and digital illustration techniques. You\'ll create a portfolio of work including logos, branding materials, and digital illustrations.',
+                topics: [
+                    'Color theory and psychology',
+                    'Typography and font selection',
+                    'Layout design principles',
+                    'Digital illustration techniques',
+                    'Branding and logo design',
+                    'Adobe Photoshop essentials',
+                    'Adobe Illustrator for vector graphics',
+                    'Creating mockups and prototypes',
+                    'Print vs. digital design considerations',
+                    'Portfolio development'
+                ],
+                videoId: 'dFSia1LZI4Y'
+            },
+            'data-science': {
+                title: 'Data Science',
+                description: 'Dive into the world of data science with this comprehensive course. You\'ll learn to collect, analyze, and interpret complex data sets using Python and popular data science libraries. The course covers statistical analysis, machine learning basics, and data visualization techniques.',
+                topics: [
+                    'Python programming for data analysis',
+                    'Data cleaning and preprocessing',
+                    'Exploratory data analysis',
+                    'Statistical inference and hypothesis testing',
+                    'Machine learning algorithms (supervised and unsupervised)',
+                    'Data visualization with Matplotlib and Seaborn',
+                    'Big data processing with Spark',
+                    'Introduction to deep learning with TensorFlow',
+                    'Natural Language Processing basics',
+                    'Data ethics and privacy considerations'
+                ],
+                videoId: 'ua-CiDNNj30'
+            },
+            'digital-marketing': {
+                title: 'Digital Marketing',
+                description: 'Learn effective digital marketing strategies and techniques to promote products and services online. This course covers various aspects of digital marketing, including social media marketing, content creation, SEO, and analytics. You\'ll create and execute a comprehensive digital marketing campaign.',
+                topics: [
+                    'Digital marketing fundamentals',
+                    'Content marketing strategies',
+                    'Search Engine Optimization (SEO)',
+                    'Social media marketing (Facebook, Instagram, Twitter, LinkedIn)',
+                    'Email marketing campaigns',
+                    'Pay-Per-Click (PPC) advertising',
+                    'Google Analytics and data interpretation',
+                    'Conversion rate optimization',
+                    'Influencer marketing',
+                    'Mobile marketing strategies'
+                ],
+                videoId: 'nU-IIXBWlS4'
+            },
+           'project-management': {
+                title: 'Project Management',
+                description: 'Gain essential project management skills to lead teams successfully. This course covers project planning, execution, monitoring, and closure. You\'ll learn both traditional and agile project management methodologies, as well as how to use popular project management tools.',
+                topics: [
+                    'Project management fundamentals',
+                    'Initiating and planning projects',
+                    'Scope, time, and cost management',
+                    'Risk assessment and management',
+                    'Team leadership and communication',
+                    'Agile project management and Scrum',
+                    'Kanban and Lean principles',
+                    'Project monitoring and control',
+                    'Stakeholder management',
+                    'Project closure and lessons learned'
+                ],
+                videoId: 'uWPIsaYpY7U'
+            },
+            'machine-learning': {
+                title: 'Machine Learning',
+                description: 'Explore the fascinating world of artificial intelligence and machine learning algorithms. This course covers the theoretical foundations of machine learning as well as practical implementation using Python and popular ML libraries. You\'ll work on real-world projects to build your portfolio.',
+                topics: [
+                    'Introduction to AI and machine learning',
+                    'Supervised learning algorithms',
+                    'Unsupervised learning algorithms',
+                    'Feature engineering and selection',
+                    'Model evaluation and validation',
+                    'Ensemble methods (Random Forests, Gradient Boosting)',
+                    'Neural networks and deep learning',
+                    'Convolutional Neural Networks (CNNs) for image processing',
+                    'Recurrent Neural Networks (RNNs) for sequence data',
+                    'Reinforcement learning basics'
+                ],
+                videoId: 'GwIo3gDZCVQ'
+            }
+        };
+
+        function loadCourseDetails() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const courseName = urlParams.get('course');
+            const course = courses[courseName];
+
+            if (course) {
+                document.title = `${course.title} - E-Learning Platform`;
+                document.getElementById('course-title').textContent = course.title;
+                document.getElementById('course-description').textContent = course.description;
+                
+                const topicsList = document.getElementById('course-topics');
+                topicsList.innerHTML = '';
+                course.topics.forEach(topic => {
+                    const li = document.createElement('li');
+                    li.textContent = topic;
+                    topicsList.appendChild(li);
+                });
+
+                // Update video
+                const videoFrame = document.getElementById('course-video');
+                videoFrame.src = `https://www.youtube.com/embed/${course.videoId}`;
+            } else {
+                document.querySelector('.course-details').innerHTML = '<h2>Course Not Found</h2><p>Sorry, the requested course could not be found.</p>';
+            }
+        }
+
+        // Load course details when the page loads
+        window.addEventListener('load', loadCourseDetails);
+    </script>
+</body>
+</html>
